@@ -22,12 +22,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# Для развёртывания на локальной машине
 SECRET_KEY = 'django-insecure-czb8ph!6(0myzc*csah-jfvjl*py0$5(dpb_&mg0wr*h6re*4p'
+# Для развёртывания в Docker
+# SECRET_KEY = environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Для развёртывания на локальной машине
 DEBUG = True
+# Для развёртывания в Docker
+# DEBUG = int(environ.get('DEBUG', default=0))
 
-ALLOWED_HOSTS = []
+# Для развёртывания на локальной машине нужно внести IP-адрес машины, по которому она доступна в сети
+ALLOWED_HOSTS = ['localhost', '0.0.0.0']
+# Для развёртывания в Docker
+# ALLOWED_HOSTS = environ.get('ALLOWED_HOSTS').split(' ')
 
 
 # Application definition
@@ -110,6 +119,8 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -131,5 +142,3 @@ STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
