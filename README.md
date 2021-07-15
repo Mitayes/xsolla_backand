@@ -13,8 +13,10 @@
 ## Разработка  
 - Python версии 3.9.6 (3.8 должна подойти)
 - PyCharm 2021.1.3 (Community Edition)
-- 
-
+- Django==3.2.5
+- django-filter==2.4.0
+- djangorestframework==3.12.4
+- gunicorn==20.1.0
 
 ## Эксплуатация
 - git version 2.20.1
@@ -29,4 +31,17 @@
 `git clone https://github.com/Mitayes/xsolla_backand.git`
 3. Собираем контейнер  
 `docker-compose build`  
-В этот момент может сругаться на версию `docker-compose`, указанную в файле `docker-compose.yml`
+В этот момент может сругаться на версию `docker-compose`, указанную в файле `docker-compose.yml`. Терминал сам подскажет какая версия допустима для вашего docker-compose
+>Either specify a supported version (e.g "2.2" or "3.3")
+4. Редактируем конфигурационные файлы:  
+
+**/.env.dev**  
+  
+Задаёт такие параметры как:
+  - DEBUG - запуск сервера в режиме отладки (0 - нет, 1 - да)
+  - SECRET_KEY - Здесь нужно указать без апосрофов и кавычек секретный ключ Django проекта
+  - ALLOWED_HOSTS - Здесь нужно указать через пробел IP-адреса, с которых будет доступен веб-сервер (например: `localhost 192.168.1.2`)  
+  
+**/docker-compose.yml**  
+  - version - версия docker-compose.yml (определяется версией docker-compose)
+  - ports - порт, на котором web-сервер будет принимать запросы (слева от двоеточия указывается порт хоста). В моём случае прослушивается http порт 80
