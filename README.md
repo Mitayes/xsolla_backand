@@ -23,6 +23,10 @@
 
 # Порядок развёртывания
 ## Развёртывание в Docker
-1. Клонируем репозиторий  
+1. Создаём папку, в которую будем клонировать репозиторий git  
+`mkdir /home/xsolla_web`
+2. Клонируем репозиторий  
 `git clone https://github.com/Mitayes/xsolla_backand.git`
-2. 
+3. Собираем контейнер  
+`docker-compose build`  
+В этот момент может сругаться на версию `docker-compose`, указанную в файле `docker-compose.yml`
