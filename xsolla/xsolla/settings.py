@@ -23,20 +23,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Для развёртывания на локальной машине
-SECRET_KEY = 'django-insecure-czb8ph!6(0myzc*csah-jfvjl*py0$5(dpb_&mg0wr*h6re*4p'
+# SECRET_KEY = 'django-insecure-czb8ph!6(0myzc*csah-jfvjl*py0$5(dpb_&mg0wr*h6re*4p'
 # Для развёртывания в Docker
-# SECRET_KEY = environ.get('SECRET_KEY')
+SECRET_KEY = environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Для развёртывания на локальной машине
-DEBUG = True
+# DEBUG = True
 # Для развёртывания в Docker
-# DEBUG = int(environ.get('DEBUG', default=0))
+DEBUG = int(environ.get('DEBUG', default=0))
 
 # Для развёртывания на локальной машине нужно внести IP-адрес машины, по которому она доступна в сети
-ALLOWED_HOSTS = ['localhost', '0.0.0.0']
+# ALLOWED_HOSTS = ['localhost', '0.0.0.0']
 # Для развёртывания в Docker
-# ALLOWED_HOSTS = environ.get('ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = environ.get('ALLOWED_HOSTS').split(' ')
 
 
 # Application definition
