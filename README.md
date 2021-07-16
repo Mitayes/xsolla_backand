@@ -16,7 +16,7 @@
 **Реализованы**  
 - Пагинация (количество результата на странице задаётся параметром `PAGE_SIZE` переменной `REST_FRAMEWORK` в ![settings.py](https://github.com/Mitayes/xsolla_backand/blob/main/xsolla/xsolla/settings.py))
 - Фильтрация по полям 'article', 'type', 'price'
-- Методы API GPUD
+- Методы API CRUD
 - Возможность развёртывания web-сервиса средствами Docker-compose (в режиме отладки средствами django)
   
 **Не успел**
