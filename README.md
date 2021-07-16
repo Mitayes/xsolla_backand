@@ -29,16 +29,19 @@
 - docker-compose version 1.25.3, build d4d1b42b
 
 # Порядок развёртывания
-## Развёртывание в Docker
+## Развёртывание в Docker  
+На машине с установленным Docker и Docker-compose  
 1. Создаём папку, в которую будем клонировать репозиторий git  
 `mkdir /home/xsolla_web`
 2. Клонируем репозиторий  
 `git clone https://github.com/Mitayes/xsolla_backand.git`
-3. Собираем контейнер  
+3. Переходим в папку с репозиторием
+`cd xsolla_backand`
+4. Собираем контейнер  
 `docker-compose build`  
 В этот момент может сругаться на версию `docker-compose`, указанную в файле `docker-compose.yml`. Терминал сам подскажет какая версия допустима для вашего docker-compose
 >Either specify a supported version (e.g "2.2" or "3.3")
-4. Редактируем конфигурационные файлы:  
+5. Редактируем конфигурационные файлы:  
 
 **/.env.dev**  
   
