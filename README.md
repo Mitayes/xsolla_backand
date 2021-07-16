@@ -61,3 +61,10 @@ API доступен по ссылке http://IP-адрес-сервера/produ
 
 **Для остановки**
 `docker-compose down`
+
+# Демонстрация web части API
+Главное окно  
+![Главное окно](./screen/main_window.png)
+  
+Главное окно  
+![Главное окно](./screen/main_window_2.png)
