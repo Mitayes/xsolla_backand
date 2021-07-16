@@ -77,6 +77,35 @@ API доступен по ссылке http://IP-адрес-сервера/produ
 **Для остановки**
 `docker-compose down`
 
+## Развёртывание на локальной машине
+Для этого необходимо:
+1. Установить Python версии 3.9 (или 3.8) 
+2. Создать папку для проекта и перейти в неё  
+`mkdir /home/xsolla_web`  
+3. Клонировать репозиторий и перейти в папку с ним  
+`git clone https://github.com/Mitayes/xsolla_backand.git`
+4. установить зависимости из ![requirements.txt](https://github.com/Mitayes/xsolla_backand/blob/main/xsolla/requirements.txt)
+5. Раскомментировать переменные для локального запуска и закомментировать те, что используются для docker (в комментариях это указано) в ![settings.py](https://github.com/Mitayes/xsolla_backand/blob/main/xsolla/xsolla/settings.py)  
+```
+# Для развёртывания на локальной машине
+SECRET_KEY = 'django-insecure-czb8ph!6(0myzc*csah-jfvjl*py0$5(dpb_&mg0wr*h6re*4p'
+# Для развёртывания в Docker
+# SECRET_KEY = environ.get('SECRET_KEY')
+
+# Для развёртывания на локальной машине
+DEBUG = False
+# Для развёртывания в Docker
+# DEBUG = int(environ.get('DEBUG', default=0))
+
+# Для развёртывания на локальной машине нужно внести IP-адрес машины, по которому она доступна в сети
+ALLOWED_HOSTS = ['localhost', '0.0.0.0']
+# Для развёртывания в Docker
+# ALLOWED_HOSTS = environ.get('ALLOWED_HOSTS').split(' ')
+```
+6. Находясь в папке с файлом ![manage.py](https://github.com/Mitayes/xsolla_backand/blob/main/xsolla/manage.py) выполнить команду  
+  
+`python manage.py runserver 0.0.0.0:8000`
+
 # Демонстрация web части API
 Главное окно (GET)  
 ![Главное окно](./screen/main_window.png)
