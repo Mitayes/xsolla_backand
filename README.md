@@ -65,6 +65,23 @@ API доступен по ссылке http://IP-адрес-сервера/produ
 # Демонстрация web части API
 Главное окно  
 ![Главное окно](./screen/main_window.png)
-  
 Главное окно  
 ![Главное окно](./screen/main_window_2.png)
+Фильтрация
+![Главное окно](./screen/filtered.png)
+Фильтрация применена 
+![Главное окно](./screen/filtered_applyed.png)
+Удаление / обновление  
+![Главное окно](./screen/main_web_delete_update.png)
+
+# Демонстрация работы API средствами postman
+GET
+![Главное окно](./screen/postman_get.png)
+GET по UUID
+![Главное окно](./screen/postman_get_on_uuid.png)
+UPDATE
+![Главное окно](./screen/postman_update.png)
+DELETE
+![Главное окно](./screen/postman_delete.png)
+INSERT 
+![Главное окно](./screen/postman_insert.png)
